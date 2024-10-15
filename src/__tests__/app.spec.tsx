@@ -6,7 +6,9 @@ describe("App", () => {
   it("should be to able to render correctly", () => {
     render(<App />)
     expect(
-      screen.getByText("Open up App.tsx to start working on your app!"),
+      screen.getByText(
+        "Abra o App dot js para começar a trabalhar na sua aplicação!",
+      ),
     ).toBeTruthy()
   })
 })
