@@ -33,4 +33,8 @@ export const lightTheme = {
       4: 4,
     },
   },
+  fonts: {
+    regular: "Helvetica-Regular",
+    medium: "Helvetica-Medium",
+  },
 } as const
