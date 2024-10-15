@@ -1,6 +1,10 @@
 import "@testing-library/react-native/extend-expect"
 
+import "@/theme"
+
 import { resources as mockResources } from "./src/utils/tests/index"
+
+jest.mock("react-native/Libraries/EventEmitter/NativeEventEmitter")
 
 jest.mock("react-i18next", () => ({
   useTranslation: () => ({
