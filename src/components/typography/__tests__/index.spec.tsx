@@ -57,5 +57,20 @@ describe("Typography", () => {
         lineHeight: 19.09,
       })
     })
+
+    it("should render badge", () => {
+      render(
+        <Typography heading="badge" testID="badge">
+          Olá, mundo!
+        </Typography>,
+      )
+
+      expect(screen.getByTestId("badge")).toHaveStyle({
+        fontFamily: "Inter_700Bold",
+        color: "#FFFFFF",
+        fontSize: 10,
+        lineHeight: 12.1,
+      })
+    })
   })
 })

@@ -18,7 +18,7 @@ const Input = (_props: InputProps) => {
       </View>
       <View style={styles.notifications}>
         <View style={styles.badge}>
-          <Typography heading="h3">02</Typography>
+          <Typography heading="badge">02</Typography>
         </View>
         <Icon name="bell-outline" color="secondary" />
       </View>

@@ -24,6 +24,12 @@ export const stylesheet = createStyleSheet((theme) => {
             fontSize: 16,
             lineHeight: 19.09,
           },
+          badge: {
+            fontFamily: theme.fonts.badge,
+            color: theme.colors.white.neutral,
+            fontSize: 10,
+            lineHeight: 12.1,
+          },
           default: defaultHeading,
         },
       },

@@ -20,7 +20,7 @@ export const stylesheet = createStyleSheet((theme) => ({
     position: "absolute",
     top: -8,
     right: -4,
-    padding: 2,
+    padding: 4,
     backgroundColor: theme.colors.blue.primary,
     borderRadius: 999,
     zIndex: 1,

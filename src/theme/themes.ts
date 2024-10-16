@@ -36,5 +36,6 @@ export const lightTheme = {
   fonts: {
     regular: "Helvetica-Regular",
     medium: "Helvetica-Medium",
+    badge: "Inter_700Bold",
   },
 } as const
