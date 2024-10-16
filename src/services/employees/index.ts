@@ -3,7 +3,7 @@ import { Employee } from "@/@types/employee"
 import { HttpClient } from "../api/types"
 
 type GetEmployeesParams = {
-  signal: AbortSignal
+  signal?: AbortSignal
   api: HttpClient
 }
 

@@ -5,7 +5,7 @@ import { useApi } from "@/context/api"
 import { getEmployees } from "@/services/employees"
 
 type FetchParams = {
-  signal: AbortSignal
+  signal?: AbortSignal
 }
 
 export const useEmployees = () => {
@@ -16,12 +16,13 @@ export const useEmployees = () => {
   const { api } = useApi()
 
   const fetch = useCallback(
-    async ({ signal }: FetchParams) => {
+    async (props?: FetchParams) => {
       try {
+        setErrorEmployees(false)
         setLoadingEmployees(true)
         const data = await getEmployees({
           api,
-          signal,
+          signal: props?.signal,
         })
 
         setEmployees(data)
@@ -33,6 +34,10 @@ export const useEmployees = () => {
     },
     [api],
   )
+
+  const tryAgainEmployees = useCallback(async () => {
+    await fetch()
+  }, [fetch])
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -47,5 +52,6 @@ export const useEmployees = () => {
     errorEmployees,
     loadingEmployees,
     getEmployees,
+    tryAgainEmployees,
   }
 }
