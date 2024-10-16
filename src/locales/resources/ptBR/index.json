@@ -2,5 +2,7 @@
   "startingMessage": "Abra o App dot js para começar a trabalhar na sua aplicação!",
   "job": "Cargo",
   "admissionDate": "Data de admissão",
-  "phone": "Telefone"
+  "phone": "Telefone",
+  "photo": "Foto",
+  "name": "Nome"
 }
