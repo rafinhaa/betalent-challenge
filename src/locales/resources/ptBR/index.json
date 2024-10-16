@@ -6,5 +6,7 @@
   "photo": "Foto",
   "name": "Nome",
   "search": "Pesquisar",
-  "loading": "Carregando"
+  "loading": "Carregando",
+  "tryAgain": "Tente novamente",
+  "error": "Aconteceu um erro!"
 }
