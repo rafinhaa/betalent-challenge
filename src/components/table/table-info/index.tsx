@@ -2,7 +2,7 @@ import { memo } from "react"
 import { View } from "react-native"
 import { useStyles } from "react-native-unistyles"
 
-import Typography from "../typography"
+import Typography from "../../typography"
 import { stylesheet } from "./styles"
 
 export type TableItemProps = {

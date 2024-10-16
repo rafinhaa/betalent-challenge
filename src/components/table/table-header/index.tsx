@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 import { View } from "react-native"
 import { useStyles } from "react-native-unistyles"
 
-import { Typography } from ".."
+import Typography from "../../typography"
 import { stylesheet } from "./styles"
 
 export type TableHeaderProps = object

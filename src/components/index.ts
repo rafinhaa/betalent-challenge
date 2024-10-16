@@ -1,6 +1,4 @@
 export { default as Typography } from "@/components/typography"
 export { default as Icon } from "@/components/icon"
 export { default as Spacer } from "@/components/spacer"
-export { default as TableItem } from "@/components/table-info"
-export { default as TableRow } from "@/components/table-row"
-export { default as TableHeader } from "@/components/table-header"
+export { default as Table } from "@/components/table"

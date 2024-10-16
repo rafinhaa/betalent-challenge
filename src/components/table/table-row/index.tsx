@@ -3,7 +3,10 @@ import { useTranslation } from "react-i18next"
 import { Animated, Image, TouchableOpacity, View } from "react-native"
 import { useStyles } from "react-native-unistyles"
 
-import { Icon, Spacer, TableItem, Typography } from ".."
+import Icon from "../../icon"
+import Spacer from "../../spacer"
+import Typography from "../../typography"
+import TableInfo from "../table-info"
 import { stylesheet } from "./styles"
 
 export type TableRowProps = {
@@ -61,9 +64,9 @@ const TableRow = ({ data }: TableRowProps) => {
 
       <Animated.View style={[styles.content, { height: heightInterpolate }]}>
         <Spacer size={20} />
-        <TableItem label={t("job")} value={data.job} />
-        <TableItem label={t("admissionDate")} value={data.admissionDate} />
-        <TableItem label={t("phone")} value={data.phone} />
+        <TableInfo label={t("job")} value={data.job} />
+        <TableInfo label={t("admissionDate")} value={data.admissionDate} />
+        <TableInfo label={t("phone")} value={data.phone} />
       </Animated.View>
     </View>
   )
