@@ -9,5 +9,7 @@
   "loading": "Carregando",
   "tryAgain": "Tente novamente",
   "error": "Aconteceu um erro!",
-  "employees": "Funcionários"
+  "employees": "Funcionários",
+  "noEmployees": "Nenhum funcionário encontrado",
+  "clearSearch": "Limpar Pesquisa"
 }

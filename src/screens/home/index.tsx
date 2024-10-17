@@ -3,14 +3,21 @@ import { useTranslation } from "react-i18next"
 import { FlatList, SafeAreaView, View } from "react-native"
 import { useStyles } from "react-native-unistyles"
 
-import { Header, Input, Loading, Spacer, Table, Typography } from "@/components"
+import {
+  FeedbackCard,
+  Header,
+  Input,
+  Loading,
+  Spacer,
+  Table,
+  Typography,
+} from "@/components"
 import { useEmployees } from "@/hooks/use-employees"
 import "@/locales"
 import "@/theme"
 import { filterEmployees } from "@/utils/filter-employees"
 
 import RenderEmployeesContent from "./components/render-employees"
-import TryAgain from "./components/try-again"
 import { stylesheet } from "./styles"
 
 export default function Home() {
@@ -22,6 +29,10 @@ export default function Home() {
     useEmployees()
 
   const filteredEmployees = filterEmployees(employees, searchedEmployees)
+
+  const handleClearEmployees = () => {
+    setSearchedEmployees("")
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -40,14 +51,28 @@ export default function Home() {
           error={errorEmployees}
           data={filteredEmployees}
           renderLoading={() => <Loading />}
-          renderError={() => <TryAgain onPress={tryAgainEmployees} />}
+          renderError={() => (
+            <FeedbackCard
+              message={t("error")}
+              buttonLabel={t("tryAgain")}
+              onPress={tryAgainEmployees}
+            />
+          )}
           renderData={(data) => (
             <FlatList
               data={data}
+              contentContainerStyle={{ flexGrow: 1 }}
               renderItem={({ item: data }) => <Table.Row data={data} />}
               keyExtractor={({ id }) => String(id)}
               ListHeaderComponent={() => <Table.Header />}
               showsVerticalScrollIndicator={false}
+              ListEmptyComponent={() => (
+                <FeedbackCard
+                  message={t("noEmployees")}
+                  buttonLabel={t("clearSearch")}
+                  onPress={handleClearEmployees}
+                />
+              )}
             />
           )}
         />
