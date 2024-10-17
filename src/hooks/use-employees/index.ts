@@ -4,6 +4,8 @@ import { Employee } from "@/@types/employee"
 import { useApi } from "@/context/api"
 import { getEmployees } from "@/services/employees"
 
+import { formatEmployees, formatSingleEmployee } from "./map-employees"
+
 type FetchParams = {
   signal?: AbortSignal
 }
@@ -25,7 +27,7 @@ export const useEmployees = () => {
           signal: props?.signal,
         })
 
-        setEmployees(data)
+        setEmployees(formatEmployees(data)(formatSingleEmployee))
       } catch {
         setErrorEmployees(true)
       } finally {

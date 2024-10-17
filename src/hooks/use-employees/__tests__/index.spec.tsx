@@ -1,15 +1,16 @@
-import { Employee } from "@/@types/employee"
+import { EmployeeResponse } from "@/@types/employee"
 import { ApiProvider } from "@/context/api"
 import { makeFakeApiData, renderHook, waitFor } from "@/utils/tests"
 
 import { useEmployees } from ".."
+import { formatEmployees, formatSingleEmployee } from "../map-employees"
 
-const data: Employee[] = [
+const data: EmployeeResponse[] = [
   {
     id: 1,
     name: "John",
     job: "Developer",
-    admission_date: "2020-01-01",
+    admission_date: "2020-01-01T00:00:00.000Z",
     phone: "123456789",
     image: "",
   },
@@ -31,7 +32,10 @@ describe("useEmployees", () => {
     await waitFor(() => {
       expect(result.current).toBeDefined()
       expect(result.current.loadingEmployees).toBe(false)
-      expect(result.current.employees).toEqual(data)
+      expect(result.current.employees.length).toEqual(1)
+      expect(result.current.employees).toEqual(
+        formatEmployees(data)(formatSingleEmployee),
+      )
       expect(result.current.errorEmployees).toBe(false)
     })
   })

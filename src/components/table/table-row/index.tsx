@@ -61,7 +61,7 @@ const TableRow = ({ data }: TableRowProps) => {
       <Animated.View style={[styles.content, { height: heightInterpolate }]}>
         <Spacer size={20} />
         <TableInfo label={t("job")} value={data.job} />
-        <TableInfo label={t("admissionDate")} value={data.admission_date} />
+        <TableInfo label={t("admissionDate")} value={data.admissionDate} />
         <TableInfo label={t("phone")} value={data.phone} />
       </Animated.View>
     </View>
