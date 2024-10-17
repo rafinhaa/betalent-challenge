@@ -1,5 +1,5 @@
 <h4 align="center">
-  <img src="container/public/logo.svg" alt="Logo" width="150"/>
+  <img src="docs/images/logo.png" alt="Logo" width="150"/>
 </h4>
 
 <h4 align="center">
@@ -11,6 +11,11 @@
       <a href="#-license">License</a>
   </p>
 </h4>
+
+<div align="center">
+  <img style="border-radius: 10px" width="320px" height="auto" alt="demo" title="demo" src="docs/videos/demo.gif" />
+
+</div>
 
 ## 🔖 About
 
@@ -75,6 +80,8 @@ yarn ios
 ```
 
 ## ℹ️ Info
+
+[Screenshots](docs/SCREENS.md)
 
 ## 📄 Changelog
 
