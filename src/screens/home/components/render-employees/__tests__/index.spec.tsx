@@ -8,9 +8,11 @@ describe("RenderEmployees", () => {
   it("should be able to render correctly", () => {
     render(
       <RenderEmployees
-        data={[{ data: "data" }]}
-        loading={false}
-        error={false}
+        options={{
+          loading: false,
+          error: false,
+          data: [{ data: "data" }],
+        }}
         renderData={(data) => <Text>{data[0].data}</Text>}
       />,
     )
@@ -21,9 +23,11 @@ describe("RenderEmployees", () => {
   it("should be able to render correctly with loading", () => {
     render(
       <RenderEmployees
-        data={[{ data: "data" }]}
-        loading={true}
-        error={false}
+        options={{
+          loading: true,
+          error: false,
+          data: [{ data: "data" }],
+        }}
         renderLoading={() => <Text>{resources.loading}</Text>}
         renderData={(data) => <Text>{data[0].data}</Text>}
       />,
@@ -35,9 +39,11 @@ describe("RenderEmployees", () => {
   it("should be able to render correctly with loading", () => {
     render(
       <RenderEmployees
-        data={[{ data: "data" }]}
-        loading={false}
-        error={true}
+        options={{
+          loading: false,
+          error: true,
+          data: [{ data: "data" }],
+        }}
         renderError={() => <Text>{resources.error}</Text>}
         renderLoading={() => <Text>{resources.loading}</Text>}
         renderData={(data) => <Text>{data[0].data}</Text>}

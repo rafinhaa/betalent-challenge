@@ -1,16 +1,18 @@
-export type RenderEmployeesProps<T> = {
+type RenderOptions<T> = {
   loading: boolean
   error: boolean
   data: T[] | undefined
+}
+
+export type RenderEmployeesProps<T> = {
+  options: RenderOptions<T>
   renderData: (data: T[]) => JSX.Element
   renderLoading?: () => JSX.Element
   renderError?: () => JSX.Element
 }
 
 const RenderEmployeesContent = <T,>({
-  loading,
-  error,
-  data,
+  options: { loading, error, data },
   renderData,
   renderLoading,
   renderError,

@@ -47,9 +47,11 @@ export default function Home() {
         <Spacer size={24} />
 
         <RenderEmployeesContent
-          loading={loadingEmployees}
-          error={errorEmployees}
-          data={filteredEmployees}
+          options={{
+            loading: loadingEmployees,
+            error: errorEmployees,
+            data: filteredEmployees,
+          }}
           renderLoading={() => <Loading />}
           renderError={() => (
             <FeedbackCard
