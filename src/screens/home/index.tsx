@@ -28,7 +28,7 @@ export default function Home() {
   const { employees, loadingEmployees, errorEmployees, tryAgainEmployees } =
     useEmployees()
 
-  const filteredEmployees = filterEmployees(employees, searchedEmployees)
+  const filteredEmployees = filterEmployees(employees)(searchedEmployees)()
 
   const handleClearEmployees = () => {
     setSearchedEmployees("")
